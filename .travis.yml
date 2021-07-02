@@ -4,7 +4,7 @@ services:
   - docker
 
 before install:
-  -docker build -t anu123bgs/docker-react -f Dockerfile.dev .
+  - docker build -t anu123bgs/docker-react -f Dockerfile.dev .
 
 script:
-  -docker run anu123bgs/docker-react npm run test -- --coverage
+  - docker run -e CI=true anu123bgs/docker-react npm run test
